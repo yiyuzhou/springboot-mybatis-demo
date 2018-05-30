@@ -14,7 +14,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,7 +28,7 @@ import java.util.List;
  * on 2018/5/28
  */
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 
@@ -44,7 +48,8 @@ public class UserController {
     private String version;
 
     @RequestMapping("/getUserInfo")
-    public List<User> getUserInfo() throws Exception{
+    public @ResponseBody
+    List<User> getUserInfo() throws Exception{
         List<User> user = userService.getUserInfo();
         System.out.println(JSON.toJSON(user));
         System.out.println(employeeProperties.getSalary());
@@ -65,6 +70,15 @@ public class UserController {
     }
 
 
+
+    @RequestMapping("/")
+    public String index(Model model){
+        List<User> users = userService.getUserInfo();
+        User user = users.get(0);
+        model.addAttribute("user" , user);
+        model.addAttribute("age" , "age");
+        return "index";
+    }
 
 
     @Bean
