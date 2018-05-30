@@ -1,0 +1,14 @@
+myycc:
+  simpleProp: ccc
+  arrayProps: 9,9,9,9,9
+  listProp1:
+    - name: ccc
+      value: ccc
+    - name: ccc
+      value: ccc
+  listProp2:
+    - cccValue1
+    - cccVavlue2
+  mapProps:
+    key1: 55555
+    key2: 55555

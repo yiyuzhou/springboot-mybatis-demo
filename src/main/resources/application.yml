@@ -12,3 +12,20 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.springbootmybatisdemo.entity
+employee:
+  salary: 2000
+  title: programer
+myyml:
+  simpleProp: simplePropValue
+  arrayProps: 1,2,3,4,5
+  listProp1:
+    - name: abc
+      value: abcValue
+    - name: efg
+      value: efgValue
+  listProp2:
+    - config2Value1
+    - config2Vavlue2
+  mapProps:
+    key1: value1
+    key2: value2
