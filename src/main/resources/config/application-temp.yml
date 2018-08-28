@@ -12,3 +12,6 @@ myycc:
   mapProps:
     key1: 55555
     key2: 55555
+employee:
+  salary: 2000
+  title: programer
